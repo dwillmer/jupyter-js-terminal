@@ -6,7 +6,7 @@
   "typings": "lib/index.d.ts",
   "dependencies": {
     "phosphor-messaging": "^1.0.5",
-    "phosphor-widget": "^0.9.13",
+    "phosphor-widget": "^1.0.0-beta",
     "term.js": "0.0.7"
   },
   "devDependencies": {
@@ -29,8 +29,8 @@
   "scripts": {
     "clean": "rimraf docs && rimraf lib && rimraf test/build",
     "clean:example": "rimraf example/*.js",
-    "build:src": "tsc --project src && node scripts/copycss.js",
     "build:example": "tsc --project example && browserify -t browserify-css example/index.js -o example/bundle.js",
+    "build:src": "tsc --project src && node scripts/copycss.js && node scripts/copydts.js",
     "build:test": "tsc --project test",
     "build": "npm run build:src && npm run build:test",
     "docs": "typedoc --options scripts/tdoptions.json",
