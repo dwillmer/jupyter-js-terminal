@@ -27,7 +27,7 @@
   },
   "scripts": {
     "clean": "rimraf docs && rimraf lib && rimraf test/build",
-    "build:src": "tsc --project src && node scripts/copycss.js",
+    "build:src": "tsc --project src && node scripts/copycss.js && node scripts/copydts.js",
     "build:test": "tsc --project test",
     "build": "npm run build:src && npm run build:test",
     "docs": "typedoc --options scripts/tdoptions.json",
